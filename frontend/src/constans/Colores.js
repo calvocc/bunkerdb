@@ -1,0 +1,12 @@
+export const NEGRO = '#000000';
+export const BLANCO = '#ffffff';
+export const AZUL = '#015A8A';
+export const VERDE = '#06936E';
+export const VERDEACTIVO = '#25AFA0';
+export const FONDO = '#F6F6F6';
+export const GRIS = '#F9F9F9';
+export const BORDE = '#ededed';
+export const TEXTO = '#ADADAD';
+export const TITULOS = '#646464';
+export const SUCCESS = '#0DB030';
+export const NARANJA = '#FEBF28';
