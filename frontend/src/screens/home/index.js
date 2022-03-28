@@ -39,7 +39,6 @@ const HomePage = () => {
             const result = await clienteAxios.get('/metrics');
             setMetrics(result.data);
         } catch (error) {
-            console.log(error)
             toast.error('Algo salio mal')
         }
     }
@@ -49,7 +48,6 @@ const HomePage = () => {
             const result = await clienteAxios.get('/networks');
             setRedes(result.data);
         } catch (error) {
-            console.log(error)
             toast.error('Algo salio mal')
         }
     }
@@ -59,7 +57,6 @@ const HomePage = () => {
             const result = await clienteAxios.get('/accounts');
             setCuentas(result.data);
         } catch (error) {
-            console.log(error)
             toast.error('Algo salio mal')
         }
     }
@@ -111,7 +108,6 @@ const HomePage = () => {
             setItemSelect(null);
             setModalTipe(null);
             toast.error('Algo salio mal')
-            console.log(error)
         }
     }
 
@@ -154,9 +150,6 @@ const HomePage = () => {
             ]
             array.push(item)
         });
-        console.log('array agrupar --')
-        console.log(array)
-        console.log('-- array agrupar')
         setCuentasredes(array);
     }
 
@@ -175,8 +168,6 @@ const HomePage = () => {
     useEffect( () => {
         if(redes && redes) agruparRedes(cuentas, redes);
     }, [cuentas, redes])
-
-    console.log(cuentasredes)
 
     return ( 
         <StyleGeneral windowHeight={windowHeight - 60}>
