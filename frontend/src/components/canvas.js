@@ -1,7 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import * as COLORES from '../constans/Colores';
 
+import {filtrarMetrics} from './utils';
+
 const Canvas = ({seriesName, padding, gridScale, gridColor, data, colors, containerWidth, metrics}) => {
+    
     const canvasRef = useRef(null);
     const legendRef = useRef(null);
 
@@ -39,16 +42,11 @@ const Canvas = ({seriesName, padding, gridScale, gridColor, data, colors, contai
         ctx.restore();
         
     }
-
-    const filterValue = (element) => {
-        const result = element.metrics.find(item => item.id === metrics);
-        return result.value;
-    }
     
     const draw = (canvas, ctx, upperLeftCornerX, upperLeftCornerY, width, height, color) => {
         let maxValue = 0;
         data.forEach(element => {
-            const val = filterValue(element);
+            const val = filtrarMetrics(element.metrics, metrics).value;
             maxValue = Math.max(maxValue, val);
         });
 
@@ -85,7 +83,7 @@ const Canvas = ({seriesName, padding, gridScale, gridColor, data, colors, contai
         const barSize = (canvasActualWidth)/numberOfBars;
 
         data.forEach(element => {
-            const val = filterValue(element);
+            const val = filtrarMetrics(element.metrics, metrics).value;
             const barHeight = Math.round( canvasActualHeight * val/maxValue) ;
             drawBar(
                 canvas,
@@ -94,8 +92,8 @@ const Canvas = ({seriesName, padding, gridScale, gridColor, data, colors, contai
                 canvas.height - barHeight - padding,
                 barSize,
                 barHeight,
-                colors[barIndex%colors.length],
-                element.name,
+                element.color ? element.color : colors[barIndex%colors.length],
+                element.name ? element.name : element.label,
                 val
             );
 

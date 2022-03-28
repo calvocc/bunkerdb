@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {Navbar, Nav, Container} from "react-bootstrap";
-import { StylesNavbar, StyleBrand, StyleNavLink } from './Styles';
+import {Navbar, Container} from "react-bootstrap";
+import { StylesNavbar, StyleBrand } from './Styles';
 
 const NavbarComponent = () => {
     return(

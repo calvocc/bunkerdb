@@ -1,4 +1,7 @@
 import React from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import "./App.css";
 
 import HomePage from "./screens/home";
@@ -9,6 +12,7 @@ function App() {
 		<>
 			<NavbarComponent />
 			<HomePage/>
+			<ToastContainer />
 		</>
 	);
 }

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Navbar, Nav, Button, Col, Row, Table} from "react-bootstrap";
+import {Navbar, Button, Row, Table} from "react-bootstrap";
 
 import * as COLORES from '../constans/Colores';
 
@@ -140,6 +140,23 @@ export const StylesBtnVerde = styled(Button)`
     }
 `
 
+export const StylesBtnSecundary = styled(Button)`
+    background-color: ${COLORES.BORDE};
+    color: ${COLORES.NEGRO};
+    border-color: ${COLORES.BORDE};
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-height: 40px;
+    margin-right: ${props => props.margiRight ? props.margiRight : 20}px;
+    &:hover{
+        background-color: ${COLORES.GRIS};
+        border-color: ${COLORES.GRIS  };
+        color: ${COLORES.NEGRO};
+    }
+`
+
 export const StylesFooter = styled.div`
     display: flex;
     flex-direction: row;
@@ -172,4 +189,8 @@ export const StyleCajaBart = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 15px;
+`
+
+export const StyleRowMtop = styled(Row)`
+    margin-top: 20px;
 `
